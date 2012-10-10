@@ -1,0 +1,31 @@
+Options +FollowSymLinks +ExecCGI
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # uncomment the following line, if you are having trouble
+  # getting no_script_name to work
+  #RewriteBase /
+
+  # we skip all files with .something
+  #RewriteCond %{REQUEST_URI} \..+$
+  #RewriteCond %{REQUEST_URI} !\.html$
+  #RewriteRule .* - [L]
+
+  # we check if the .html version is here (caching)
+  RewriteRule ^$ index.html [QSA]
+  RewriteRule ^([^.]+)$ $1.html [QSA]
+  RewriteCond %{REQUEST_FILENAME} !-f
+
+  # no, so we redirect to our front web controller
+  RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>
+<IfModule mod_expires.c>
+  ExpiresActive On
+	ExpiresDefault "access plus 1 weeks"
+
+	ExpiresByType text/css "access plus 4 hours"
+	ExpiresByType text/htm "access plus 0 hours"
+	ExpiresByType text/html "access plus 0 hours"
+	ExpiresByType application/x-javascript "access plus 4 hours"
+</IfModule>

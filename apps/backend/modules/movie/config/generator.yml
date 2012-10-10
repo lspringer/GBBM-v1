@@ -1,0 +1,32 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Movie
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          movie
+    with_doctrine_route:     1
+
+    config:
+      actions: ~
+      fields:
+        uploader: { label: Upload }
+      list:
+        display: [ =title, year, runtime, updated_at ]
+        sort: [title, asc]
+        actions:
+          _new: ~
+          lookup: { action: lookup }
+      filter:
+        display: [ author, title, synopsis, year, runtime ]
+      form:
+        display: [ author, title, image, uploader, rating, year, runtime, synopsis ]
+      edit:
+        display:
+          Movie Data: [ author, title, image, _thumbnail, uploader, rating, year, runtime, synopsis ]
+          Genres: [ _genres ]
+          Netflix Keys: [ _nfdata ]
+      new:     ~

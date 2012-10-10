@@ -1,0 +1,127 @@
+User:
+  actAs: { Timestampable: ~ }
+  columns:
+    id: { type: integer(10), primary: true, autoincrement: true, notnull: true }
+    username: { type: string(255), notnull: true, unique: true }
+    password: { type: string(255), notnull: true }
+    role: { type: enum, values: ['disabled', 'normal', 'admin'], notnull: true, default: 'normal' }
+    email: { type: string(255), notnull: true }
+    token: { type: string(32) }
+    nftoken: { type: string(255) }
+    nfsecret: { type: string(255) }
+    nfauth: { type: boolean, default: 0, notnull: true }
+Movie:
+  actAs: { Timestampable: ~ }
+  columns:
+    id: { type: integer(10), primary: true, autoincrement: true, notnull: true }
+    author: { type: integer(10), notnull: true }
+    image: { type: string(255) }
+    title: { type: string(255), notnull: true }
+    rating: { type: decimal, scale: 1 }
+    year: { type: integer(4), notnull: true }
+    nfid: { type: string(255) }
+    runtime: { type: integer(4) }
+    synopsis: { type: string(2000) }
+    nflink: { type: string(255) }
+    nfsimilar: { type: string(255) }
+  relations:
+    User:
+      foreignAlias: Movies
+      local: author
+      foreign: id
+      type: one
+      foreignType: many
+    Beer:
+      foreignAlias: Movies
+      refClass: FeaturedPair
+      local: movie_id
+      foreign: beer_id
+Genre:
+  columns:
+    id: { type: integer(10), primary: true, autoincrement: true, notnull: true }
+    movie_id: { type: integer(10), notnull: true }
+    genre: { type: string(255), notnull: true }
+  relations:
+    Movie:
+      foreignAlias: Genres
+      local: movie_id
+      foreign: id
+      type: one
+      foreignType: many
+      onUpdate: CASCADE
+      onDelete: CASCADE
+Beer:
+  actAs: { Timestampable: ~ }
+  columns:
+    id: { type: integer(10), primary: true, autoincrement: true, notnull: true }
+    author: { type: integer(10), notnull: true }
+    label: { type: string(255), notnull: true }
+    style: { type: integer(10), notnull: true }
+    brewery: { type: integer(10), notnull: true }
+    image: { type: string(255) }
+    notes: { type: string }
+    rating: { type: decimal, scale: 1 }
+    abv: { type: string(255) }
+    ibu: { type: string(255) }
+  relations:
+    User:
+      foreignAlias: Beers
+      local: author
+      foreign: id
+      type: one
+      foreignType: many
+    Style:
+      foreignAlias: Beers
+      local: style
+      foreign: id
+      type: one
+      foreignType: many
+    Brewery:
+      foreignAlias: Beers
+      local: brewery
+      foreign: id
+      type: one
+      foreignType: many
+    Movie:
+      foreignAlias: Beers
+      refClass: FeaturedPair
+      local: beer_id
+      foreign: movie_id
+Style:
+  actAs: { Timestampable: ~ }
+  columns:
+    id: { type: integer(10), primary: true, autoincrement: true, notnull: true }
+    style: { type: string(255), notnull: true }
+    notes: { type: string }
+    image: { type: string(255) }
+Brewery:
+  actAs: { Timestampable: ~ }
+  columns:
+    id: { type: integer(10), primary: true, autoincrement: true, notnull: true }
+    name: { type: string(255), notnull: true }
+    country: { type: string(255), notnull: true }
+    image: { type: string(255) }
+
+FeaturedPair:
+  columns:
+    id: { type: integer(10), primary: true, autoincrement: true, notnull: true }
+    beer_id: { type: integer(10), notnull: true }
+    movie_id: { type: integer(10), notnull: true }
+    meta: { type: string(255) }
+  relations:
+    Beer:
+      foreignAlias: FeaturedPairs
+      local: beer_id
+      foreign: id
+      type: one
+      foreignType: many
+      onUpdate: CASCADE
+      onDelete: CASCADE
+    Movie:
+      foreignAlias: FeaturedPairs
+      local: movie_id
+      foreign: id
+      type: one
+      foreignType: many
+      onUpdate: CASCADE
+      onDelete: CASCADE

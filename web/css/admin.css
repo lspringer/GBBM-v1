@@ -1,0 +1,94 @@
+/* Global Admin Styles
+----------------------------------------------------------------------*/
+body
+{
+	width: 1024px;	
+	font-size: 11px;
+	padding: 5px;
+}
+
+div#topLine
+{
+	padding: 10px;
+	background: #000000;
+	font-size: 18px;
+	color: #FFFFFF;
+	border: 1px 1px 0px 1px solid #000000;
+}
+div#backendHeader
+{
+	padding:20px; 
+	background:#CCCCCC; 
+}
+ul.dashboard
+{
+	margin: 0px;
+	background:#CCCCCC; 
+	width: 100%;
+	border-top: 1px solid #999999;
+	border-bottom: 1px solid #999999;
+	height: 26px;
+}
+ul.dashboard li
+{
+	list-style: none;
+	float: left;
+}
+ul.dashboard li a
+{
+	text-decoration: none;
+	font-weight: bold;
+	color: #555555;
+	display: block;
+	background: #CCCCCC;
+	padding: 5px;
+	border-right: 1px solid #999999;
+}
+ul.dashboard li a:hover
+{
+	background: #333333;
+	color: #FFFFFF;
+}
+ul.dashboard li ul
+{
+	position: absolute;
+	display: none;
+	margin: 0px;
+	border-left: 1px solid #999999;
+	border-right: 1px solid #999999;
+	border-bottom: 1px solid #999999;
+}
+ul.dashboard li:hover ul
+{
+	display: block;
+}
+ul.dashboard ul li
+{
+	margin: 0px;
+	padding: 0px;
+	float: none;
+}
+ul.dashboard ul li a
+{
+	border: 0px;
+}
+ul.dashboard li.last a
+{
+	border-right: 0px;
+}
+
+.clear {
+	clear: both;
+}
+
+ul.movieDetail li
+{
+	list-style-type: none;
+	padding: 2px 0px;
+}
+
+ul.movieDetail li.sf_admin_action_new a
+{
+	background: transparent url(../../sfDoctrinePlugin/images/new.png) no-repeat scroll 0 0;
+	padding-left: 20px;
+}

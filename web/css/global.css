@@ -1,0 +1,364 @@
+hea/* @group reset */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, pre,
+a, abbr, acronym, address, b, bdo, big, blockquote, center, cite, code,
+del, dfn, em, i, img, ins, kbd, q, samp,
+small, strike, strong, sub, sup, tt, u, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, thead, tfoot, tbody, tr, th, td,
+article, aside, canvas, details, embed, figcaption, figure,
+footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	padding: 0;
+    margin: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+body {
+	line-height: 1.3;
+	font-size: 62.5%;
+	font-family: Helvetica Neue, helvetica, Arial, sans-serif;
+	background-color: #F5F9FF;
+}
+/*tweak style on this*/
+:focus {
+	outline: 1px dotted #ccc;
+}
+
+/* @group list */
+ol, ul {
+	list-style: none;
+	list-style-position: outside;
+}
+nav ul {
+    list-style:none;
+}
+dt {
+	font-weight: bold;
+}
+/* @end */
+
+/* @group Blockquote */
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+blockquote, q {
+	quotes: none;
+}
+/* @end */
+
+/* @group Tables */
+/* Tables
+	tables still need 'cellspacing="0"' in the markup!
+------------------------------*/
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* @end */
+
+/* @group html5 backwards compatibility */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+/* @end */
+/* Clearfix  (http: //www.positioniseverything.net/easyclearing.html)
+----------------------------------------------------------------------*/
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.clearfix {
+	display: inline-block;
+/*IE/Mac */
+}
+/* Hides from IE-mac \*/
+* html .clearfix {
+	height: 1%;
+}
+.clearfix {
+	display: block;
+}
+/* End hide from IE-mac */
+/* @group erase? */
+/*
+h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {
+	margin: 0;
+}
+*/
+/* @end */
+
+/* @end */
+
+/* @group Common Classes*/
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+.clear {
+	clear: both;
+}
+#btnHitMe, #backBtn, #pickerBtn {
+	padding: 4px 20px;
+	display: inline-block;
+	font-weight: bold;
+	text-decoration: none;
+	text-align: center;
+	cursor: pointer;
+	color: #000;
+	text-shadow: 0 -1px 0 #fff;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	background-color: #fff;
+	border: 1px solid #000;
+}
+
+#btnHitMe {
+	position: absolute;
+	top: 30px;
+	left: 200px;
+}
+
+#pickerBtn {
+	float: right;
+	margin: 10px 0px 0px 10px;
+}
+
+#backBtn {
+	margin: 10px 0px 0px 10px;
+}
+
+#btnHitMe:hover, #backBtn:hover, #pickerBtn:hover {
+	color: #fff;
+	text-decoration: none;
+	background: #efefef;
+}
+/* @group cols */
+.col, .colBeer, .colMovie {
+	float: left;
+	overflow: hidden;
+	text-align: left;
+}
+
+.col2 .colBeer, .col2 .colMovie {
+	width: 425px;
+	height: 370px;
+	padding: 15px;
+	margin-right: 10px;
+	overflow-y: auto;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #ddd;
+	background-color: #fbfbfb;
+}
+.col2 .col {
+	width: 49%;
+}
+.col3 .col {
+	width: 33%;
+}
+.col4 .col {
+	width: 24.5%;
+}
+.col5 .col {
+	width: 20%;
+}
+.col6 .col {
+	width: 16%;
+}
+
+iframe.fb_ltr {
+	margin-top: 10px;
+}
+
+/* @end */
+/* @end */
+/* @group typography */
+input, select, button {
+	font-family: Helvetica Neue, helvetica, Arial, sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+	color: #34607A;
+}
+h1 {
+	font-size: 1.8em;
+}
+h2 {
+	font-size: 1.6em;
+    color: #000000;
+    padding-bottom: 7px;
+}
+h3 {
+	font-size: 14px;
+	text-decoration: none;
+}
+h3 a {
+	text-decoration: none;
+	color: #34607A;
+}
+h3 a:hover {
+	text-decoration: underline;
+}
+h4 {
+	font-size: 1.2em;
+}
+h5 {
+	font-size: 1em;
+}
+h6 {
+	font-size: 1em;
+}
+.helpLink {
+	font-size: 12px;
+	padding-right: 20px;
+	background: transparent url(/i/icons/icon_help16x16.png) no-repeat 100% 50%;
+}
+a {
+	color: #2a85bd;
+}
+/* @end */
+/* @group layout */
+#wrapper {
+	width: 980px;
+	margin: 0 auto;
+}
+/* @group header */
+header {
+	height: 120px;
+	padding-left: 201px;
+	position: relative;
+}
+.logo {
+	height: 90px;
+	width: 200px;
+	position: absolute;
+	top: 15px;
+	left: -21px;
+	display: block;
+	text-indent: -999em;
+	background: #fff url(/images/shared/logo.gif) no-repeat 0 0;
+}
+
+#navlist {
+	padding-top: 95px;
+	position: relative;
+	float: right;
+}
+
+#navlist li {
+	display: inline;
+	padding-left: 15px;
+}
+
+#navlist li a {
+	font-size: 1.8em;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #E64135;
+}
+
+#navlist li a:hover {
+	color: #000000;
+}
+
+ul.error_list li {
+	font-size: 1.4em;
+	color: #D70000;
+}
+
+.labelHeader {
+	font-size: 1.4em;
+	color: #34607A;
+	font-weight: bold;
+}
+/* @end */
+/* @group content */
+
+#content {
+	padding: 20px 22px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border: 1px solid #ddd;
+  background-color: #CC0000;
+}
+#content fieldset {
+	border: none;
+}
+
+.mainCol {
+	padding: 15px;
+	margin-right: 10px;
+	overflow-y: auto;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #ddd;
+	background-color: #fbfbfb;
+}
+
+.socialCol {
+    margin-top: 10px;
+}
+
+li.cta {
+	padding: 10px 0px;
+	font-size: 1.3em;
+}
+
+li.synopsis {
+	padding-top: 5px;
+}
+
+#content ol {
+	list-style: decimal inside;
+}
+
+#content ol, #content p {
+	padding: 5px;
+}
+
+ul.pickerPag {
+    margin-top: 10px;
+}
+ul.pickerPag li {
+	display: inline;
+	padding-right: 30px;
+}
+
+ul.pickerPag li a {
+	font-size: 1.4em;
+	text-decoration: none;
+}
+
+ul.comboActions li a {
+	text-decoration: none;
+	font-size: 14px;
+	color: #34607A;
+}
+
+ul.comboActions li a:hover {
+	text-decoration: underline;
+}
+/* @end */
+/* @group footer */
+footer {
+
+	margin-top: 15px;
+	padding: 35px 22px;
+}
+/* @end */
+/* @end */

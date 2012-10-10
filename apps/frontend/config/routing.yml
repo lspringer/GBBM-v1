@@ -1,0 +1,39 @@
+# default rules
+homepage:
+  url:   /
+  param: { module: homepage, action: index }
+
+login:
+  url: /login/:movie_id/:beer_id/:queue
+  param: { module: homepage, action: login }
+
+share_movie:
+  url: /share/:movie_id/:beer_id
+  param: { module: homepage, action: index }
+
+add_movie:
+  url: /add_movie/:movie_id/:beer_id/:queue
+  param: { module: homepage, action: add_movie }
+
+pairingTypes:
+  url: /pick/step1
+  param: { module: homepage, action: pairingTypes }
+
+pairingPicks:
+  url: /pick/step2
+  param: { module: homepage, action: pairingPicks }
+
+privacy:
+  url: /privacy
+  param: { module: homepage, action: privacy }
+
+about:
+  url: /about
+  param: { module: homepage, action: about }
+
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

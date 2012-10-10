@@ -1,0 +1,77 @@
+featured_pair:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                FeaturedPair
+    module:               featured_pair
+    prefix_path:          featured_pair
+    column:               id
+    with_wildcard_routes: true
+
+lookup_movie:
+  url: /movie/lookup
+  params: { module: movie, action: lookup }
+
+brewery:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Brewery
+    module:               brewery
+    prefix_path:          brewery
+    column:               id
+    with_wildcard_routes: true
+
+style:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Style
+    module:               style
+    prefix_path:          style
+    column:               id
+    with_wildcard_routes: true
+
+beer:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Beer
+    module:               beer
+    prefix_path:          beer
+    column:               id
+    with_wildcard_routes: true
+
+movie:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Movie
+    module:               movie
+    prefix_path:          movie
+    column:               id
+    with_wildcard_routes: true
+
+user:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                User
+    module:               user
+    prefix_path:          user
+    column:               id
+    with_wildcard_routes: true
+
+login:
+  url: /security/login
+  param: {module: security, action: login }
+
+logout:
+  url: /security/logout
+  param: {module: security, action: logout }
+
+# default rules
+homepage:
+  url:   /
+  param: { module: homepage, action: index }
+
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

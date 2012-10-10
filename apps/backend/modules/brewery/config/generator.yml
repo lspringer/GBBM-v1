@@ -1,0 +1,25 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Brewery
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          brewery
+    with_doctrine_route:     1
+
+    config:
+      actions: ~
+      fields:
+        uploader: { label: Upload }
+      list:
+        display: [ =name, country, updated_at ]
+        sort: [name, asc]
+      filter:
+        display: [ name, country ]
+      form:
+        display: [ name, country, _thumbnail, image, uploader ]
+      edit:    ~
+      new:     ~

@@ -1,0 +1,25 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Style
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          style
+    with_doctrine_route:     1
+
+    config:
+      actions: ~
+      fields:
+        uploader: { label: Upload }
+      list:
+        display: [ =style, updated_at ]
+        sort: [style, asc]
+      filter:
+        display: [ style ]
+      form:
+        display: [ style, image, _thumbnail, uploader, notes ]
+      edit:    ~
+      new:     ~

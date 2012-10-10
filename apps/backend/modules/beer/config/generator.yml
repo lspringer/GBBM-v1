@@ -1,0 +1,27 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Beer
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          beer
+    with_doctrine_route:     1
+
+    config:
+      actions: ~
+      fields:
+        uploader: { label: Upload }
+        abv: { label: ABV }
+        ibu: { label: IBU }
+      list:
+        display: [ =label, style, brewery, updated_at ]
+        sort: [label, asc]
+      filter:
+        display: [ author, label, style, brewery ]
+      form:
+        display: [ author, label, image, _thumbnail, uploader, style, abv, ibu, brewery, rating, notes ]
+      edit:    ~
+      new:     ~

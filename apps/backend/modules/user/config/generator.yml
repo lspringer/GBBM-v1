@@ -1,0 +1,23 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           User
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          user
+    with_doctrine_route:     1
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        display: [ =username, role, email ]
+      filter:
+        display: [ username, role, email ]
+      form:
+        display: [ username, password, role, email ]
+      edit:    ~
+      new:     ~
