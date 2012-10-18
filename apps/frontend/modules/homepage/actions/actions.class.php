@@ -82,6 +82,10 @@ class homepageActions extends sfActions
 	{
 	}
 
+	public function executeError(sfWebRequest $request)
+	{
+	}
+
 	public function executePairingTypes(sfWebRequest $request)
 	{
 		$this->form = new PairingTypesForm();
