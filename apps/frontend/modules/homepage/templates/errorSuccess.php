@@ -4,5 +4,5 @@
 </div>
 <div class="col2 clearfix mainCol">
 <p>
-Ze page&helip; she does not exist. Help yourself out by clicking <a href="<?php echo url_for('@homepage') ?>">here</a></p>
+Ze page&hellip; she does not exist. Help yourself out by clicking <a href="<?php echo url_for('@homepage') ?>">here</a></p>
 </div>
