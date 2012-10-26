@@ -1,6 +1,6 @@
 <ul class="movie">
 	<?php if($movie->image): ?>
-		<li class="img"><img src="<?php echo $movie->image ?>" alt="<?php echo $movie->title ?>" width="110" height="150" /></li>
+		<li class="img"><img src="<?php echo $movie->image ?>" alt="<?php echo $movie->title ?>" /></li>
 	<?php endif; ?>
 	<li><h3><a href="<?php echo $movie->nflink ?>" title="<?php echo $movie->title ?>" target="_new"><?php echo $movie->title ?></a></h3></li>
 	<li>

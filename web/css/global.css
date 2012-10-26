@@ -155,7 +155,7 @@ h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {
 
 .col2 .colBeer, .col2 .colMovie {
 	width: 425px;
-	height: 370px;
+	height: 625px;
 	padding: 15px;
 	margin-right: 10px;
 	overflow-y: auto;

@@ -1,3 +1,3 @@
 <?php if(!empty($form->getObject()->image)): ?>
-<img src="<?php echo Tools::getThumbnail($form->getObject()->image, 110, 150, 'canvas') ?>" />
+<img src="<?php echo Tools::getThumbnail($form->getObject()->image, 284, 405, 'canvas') ?>" />
 <?php endif ?>

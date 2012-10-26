@@ -28,7 +28,8 @@ class homepageActions extends sfActions
 				$this->redirect('@homepage');
 			}
  		}
- 		
+ 		//Tools::p($this->combo->movie->toArray(),1);
+
  		$this->getUser()->randomTracker($this->combo->beer->id, $this->combo->movie->id);
  	}
 

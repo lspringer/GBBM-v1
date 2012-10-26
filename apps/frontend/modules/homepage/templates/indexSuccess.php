@@ -12,6 +12,7 @@
 <div class="col2 clearfix">
 <?php include_partial('global/combo', array('combo' => $combo)) ?>
 </div>
+<!--
 <div class="col2 clearfix mainCol socialCol">
 	<h3>Discuss this pairing</h3>
 	<?php
@@ -40,4 +41,5 @@
 		));
 	?>
 </div>
+-->
 <!-- end colThree -->

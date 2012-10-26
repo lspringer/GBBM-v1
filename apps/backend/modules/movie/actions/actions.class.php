@@ -60,6 +60,19 @@ class movieActions extends autoMovieActions
   	return sfView::NONE;
   }
 
+  public function executeFixImage(sfWebRequest $request)
+  {
+  	$movies = Doctrine::getTable('Movie')->createQuery()->execute();
+
+  	foreach($movies as $movie)
+  	{
+  		$data = Netflix::catalogDetail($movie['nfid']);
+  		$movie->image = $data['image'];
+  		$movie->save();
+  	}
+  	return sfView::NONE;
+  }
+
   protected function processForm(sfWebRequest $request, sfForm $form)
   {
     $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));

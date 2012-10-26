@@ -31,7 +31,7 @@ class Netflix extends NetflixBase
 		{
 			$nf->addParam('start_index', $start_index);
 		}
-		
+
 		return self::formatNfTitle($nf->executeJson());
 	}
 
@@ -92,7 +92,7 @@ class Netflix extends NetflixBase
 		if(is_null($data))
 		{
 			return NULL;
-		}		
+		}
 		if(isset($data->catalog_titles))
 		{
 			$loop = &$data->catalog_titles->catalog_title;
@@ -106,12 +106,14 @@ class Netflix extends NetflixBase
 			$loop[] = &$data->catalog_title;
 			$one = TRUE;
 		}
-		
+
 		$now = time();
 		foreach($loop as $title)
 		{
+			$hiResImage = str_replace('/large/','/ghd/', $title->box_art->large);
+			$image = file_get_contents($hiResImage) ? $hiResImage : $title->box_art->large;
 			$temp = array(
-				'image' => $title->box_art->large,
+				'image' => $image,
 				'title' => $title->title->regular,
 				'rating' => $title->average_rating,
 				'year' => $title->release_year,
@@ -158,7 +160,7 @@ class Netflix extends NetflixBase
 						elseif(isset($d->available_until) && $now > $d->available_until)
 						{
 							continue;
-						}						
+						}
 						$label = $d->category->label;
 						$temp['format_array'][$label] = $label;
 					}
@@ -171,7 +173,7 @@ class Netflix extends NetflixBase
 					$temp['genre'][] = $v->term;
 				}
 			}
-			
+
 			$return[] = $temp;
 		}
 		return $one ? array_shift($return) : $return;
@@ -243,14 +245,14 @@ class Netflix extends NetflixBase
 		$nf->sigs['oauth_secret'] = $authData['oauth_token_secret'];
 		return $nf->executeJson();
 	}
-	
+
 	/**
 	* Get Player Link
 	* @param string $url URL from earlier netflix call
 	* @return string
 	*/
 	public static function getPlayerLink($url)
-	{		
+	{
 		if(empty($url))
 		{
 			return NULL;

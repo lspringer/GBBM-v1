@@ -1,6 +1,6 @@
 <ul class="beer">
 <?php if($beer->image): ?>
-	<li class="image"><img src="<?php echo Tools::getThumbnail($beer->image,110,150, 'canvas') ?>" alt="<?php echo $beer->label ?>" width="110" height="150" />
+	<li class="image"><img src="<?php echo Tools::getThumbnail($beer->image,284,405, 'canvas') ?>" alt="<?php echo $beer->label ?>" />
 <?php endif; ?>
 	<li><h3><a href="<?php echo $beer->getShopLink() ?>" target="_new"><?php echo $beer->label ?></a></h3></li>
 	<li>
