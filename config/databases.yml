@@ -2,6 +2,6 @@ all:
   doctrine:
     class: sfDoctrineDatabase
     param:
-      dsn: 'mysql:host=localhost;dbname=gbbm_beta'
+      dsn: 'mysql:host=localhost;dbname=gbbm'
       username: gbbmuser
       password: drunkfilm
