@@ -52,6 +52,7 @@ class Netflix extends NetflixBase
 		$nf->setUrl($url);
 		$nf->addParam('expand', 'synopsis,available_formats');
 		$data = self::formatNfTitle($nf->executeJson());
+
 		return $data;
 	}
 
