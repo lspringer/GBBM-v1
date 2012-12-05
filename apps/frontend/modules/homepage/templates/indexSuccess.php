@@ -12,9 +12,9 @@
 <div class="col2 clearfix">
 <?php include_partial('global/combo', array('combo' => $combo)) ?>
 </div>
-<!--
+
 <div class="col2 clearfix mainCol socialCol">
-	<h3>Discuss this pairing</h3>
+	<h3>Share this pairing</h3>
 	<?php
 		include_partial('global/twitter', array(
 			'url' => url_for('@share_movie?movie_id='.$combo->movie->id.'&beer_id='.$combo->beer->id, TRUE),
@@ -33,13 +33,13 @@
                 ));
         ?>
 
-	<?php
+	<?php /*
 
 		include_partial('global/disqus', array(
 			'url' => url_for('@share_movie?movie_id='.$combo->movie->id.'&beer_id='.$combo->beer->id, TRUE),
 			'uid' => $combo->movie->id.'_'.$combo->beer->id,
 		));
-	?>
+*/	?>
 </div>
--->
+
 <!-- end colThree -->
