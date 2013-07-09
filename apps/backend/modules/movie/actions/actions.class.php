@@ -28,6 +28,22 @@ class movieActions extends autoMovieActions
     }
   }
 
+  public function executeFixNfid(sfWebRequest $request)
+  {
+  	$movies = Doctrine::getTable('Movie')->createQuery()->execute();
+
+  	foreach($movies as $movie)
+  	{
+  		$current = $movie->nfid;
+  		$movie->nfid = str_replace('api', 'api-public', $current);
+  		Tools::p($movie->nfid);
+  		$current = $movie->nfsimilar;
+  		$movie->nfsimilar = str_replace('api', 'api-public', $current);
+  		$movie->save();
+  	}
+  	return sfView::NONE;
+  }
+
   public function executeNew(sfWebRequest $request)
   {
     if($request->getParameter('m'))
