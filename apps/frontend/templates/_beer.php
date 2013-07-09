@@ -9,6 +9,8 @@
 			<dd><?php echo $beer->Style ?></dd>
 			<dt>Brewery:</dt>
 			<dd><?php echo $beer->Brewery ?></dd>
+			<dt>Country of Origin:</dt>
+			<dd><?php echo sfCultureInfo::getInstance('en')->getCountry($beer->Brewery->country) ?></dd>
 			<?php /*
 			<dt>Rating:</dt>
 			<?php if(!empty($beer->rating)): ?>
