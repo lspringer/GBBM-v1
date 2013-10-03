@@ -9,10 +9,10 @@ class Beer extends BaseBeer
 	{
 		return $this->label;
 	}
-	
+
 	public function getShopLink()
 	{
-		$term = urlencode($this->label);
-		return "http://www.bevmo.com/Shop/ProductList.aspx?Ntt={$term}&N=0&Ntx=mode%2bmatchall&Nty=1&D={$term}&Ntk=All&Dx=mode%2bmatchall";
+		$term = rawurlencode($this->label);
+		return "http://www.bevmo.com/Shop/ProductList.aspx/_/D-{$term}/N-/Ntt-{$term}?DNID=Home&Dx=mode%2Bmatchany&fromsearch=true&Ntk=All&Ntx=mode%2Bmatchany";
 	}
 }
