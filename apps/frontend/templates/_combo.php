@@ -6,7 +6,7 @@
 <div id="beer" class="colBeer">
 	<?php include_partial('global/beer', array('beer' => $combo->beer, 'movieId' => $combo->movie->id)) ?>
 	<ul class="comboActions">
-		<li><a href="<?php echo $combo->beer->getShopLink() ?>" target="_new">Find this Beer!</a></li>
+		<li><a href="<?php echo $combo->beer->getShopLink() ?>" target="_new">Try to Find this Beer!</a></li>
 	</ul>
 </div>
 
