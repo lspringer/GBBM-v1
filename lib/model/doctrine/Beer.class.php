@@ -12,7 +12,7 @@ class Beer extends BaseBeer
 
 	public function getShopLink()
 	{
-		$term = rawurlencode($this->label);
-		return "http://www.bevmo.com/Shop/ProductList.aspx/_/D-{$term}/N-/Ntt-{$term}?DNID=Home&Dx=mode%2Bmatchany&fromsearch=true&Ntk=All&Ntx=mode%2Bmatchany";
+		$term = rawurlencode(sprintf('%s beer',$this->label));
+		return sprintf('https://www.google.com/search?q=%s&ie=utf-8&oe=utf-8&tbm=shop', $term);
 	}
 }

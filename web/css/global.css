@@ -360,5 +360,8 @@ footer {
 	margin-top: 15px;
 	padding: 35px 22px;
 }
+footer li {
+ padding: 5px 0px;
+}
 /* @end */
 /* @end */

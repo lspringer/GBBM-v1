@@ -37,8 +37,11 @@ google.load("jqueryui", "1.8.11");
 			 <?php echo $sf_content ?>
 		</section>
 		<footer>
-			<a href="http://www.netflix.com" title="Delivered by Netflix"><img src="/images/shared/delivered-by-netflix.png" alt="Delivered by Netflix" width="150" height="65" /></a>
-			<br /><a href="<?php echo url_for('@privacy') ?>" title="Privacy Policy">GBBM Privacy Policy</a>
+	<ul>
+		<li>Curated by <a href="http://about.me/lee.springer">Lee Springer</a></li>		
+	<li><a href="http://www.netflix.com" title="Delivered by Netflix"><img src="/images/shared/delivered-by-netflix.png" alt="Delivered by Netflix" width="150" height="65" /></a></li>
+			<li><a href="<?php echo url_for('@privacy') ?>" title="Privacy Policy">GBBM Privacy Policy</a></li>
+		</ul>
 		</footer>
 	</div>
 <script type="text/javascript" src="/js/global.js"></script>
@@ -46,6 +49,8 @@ google.load("jqueryui", "1.8.11");
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-274358-3']);
+  _gaq.push(['_setDomainName', 'goodbeerbadmovie.com']);
+  _gaq.push(['_setAllowLinker', true]);
   _gaq.push(['_trackPageview']);
 
   (function() {
