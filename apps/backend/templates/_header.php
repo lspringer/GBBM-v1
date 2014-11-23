@@ -6,9 +6,6 @@
 	<li><?php echo link_to('User', '@user')?></li>
 	<li>
 		<?php echo link_to('Movie', '@movie')?>
-		<ul>
-			<li><?php echo link_to('Lookup', '@lookup_movie')?></li>
-		</ul>
 	</li>
 	<li>
 		<?php echo link_to('Beer', '@beer')?>

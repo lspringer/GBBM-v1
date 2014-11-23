@@ -31,7 +31,6 @@ class Randomizer
 		$method = ($defaultTest == self::METHOD_RATE) ? rand(1,self::METHOD_MAX) : 'Default';
 		$return = new self($bIds, $mIds);
 		call_user_func(array($return,'method'.$method));
-		$return->nfData = Netflix::catalogDetail($return->movie->nfid);
 		return $return;
 	}
 
