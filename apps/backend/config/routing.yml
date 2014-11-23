@@ -7,10 +7,6 @@ featured_pair:
     column:               id
     with_wildcard_routes: true
 
-lookup_movie:
-  url: /movie/lookup
-  params: { module: movie, action: lookup }
-
 brewery:
   class: sfDoctrineRouteCollection
   options:

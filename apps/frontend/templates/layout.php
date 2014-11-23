@@ -38,8 +38,7 @@ google.load("jqueryui", "1.8.11");
 		</section>
 		<footer>
 	<ul>
-		<li>Curated by <a href="http://about.me/lee.springer">Lee Springer</a></li>		
-	<li><a href="http://www.netflix.com" title="Delivered by Netflix"><img src="/images/shared/delivered-by-netflix.png" alt="Delivered by Netflix" width="150" height="65" /></a></li>
+		<li>Curated by <a href="http://about.me/lee.springer">Lee Springer</a></li>	
 			<li><a href="<?php echo url_for('@privacy') ?>" title="Privacy Policy">GBBM Privacy Policy</a></li>
 		</ul>
 		</footer>
