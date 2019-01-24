@@ -10,11 +10,14 @@
 	<!--[if lt IE 9]>
 			<script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-<script src="http://www.google.com/jsapi"></script>
-<script type="text/javascript" charset="utf-8">
-google.load("jquery", "1.5.2");
-google.load("jqueryui", "1.8.11");
-</script>
+<script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
+<script
+  src="https://code.jquery.com/ui/1.8.24/jquery-ui.min.js"
+  integrity="sha256-UOoxwEUqhp5BSFFwqzyo2Qp4JLmYYPTHB8l+1yhZij8="
+  crossorigin="anonymous"></script>
 <?php if(has_slot('header')) echo get_slot('header') ?>
 </head>
 <body>
