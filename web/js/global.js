@@ -14,7 +14,7 @@ function gridder() {
 $.fn.btnHit = function(options) {
 	// Extend our default options with those provided.
 	// Note that the first arg to extend is an empty object -
-	// this is to keep from overriding our ÒdefaultsÓ object.
+	// this is to keep from overriding our ï¿½defaultsï¿½ object.
 	var opts = $.extend({}, $.fn.btnHit.defaults, options);  
 	$this = $(this);
 	
@@ -25,14 +25,14 @@ $.fn.btnHit = function(options) {
 	
 	
 	};
-	// plugin defaults Ð added as a property on our plugin function
+	// plugin defaults ï¿½ added as a property on our plugin function
 $.fn.btnHit.defaults = {
 	
 };
  
 */
 
-$('li.next a, li.prev a').live('click', function(e) {
+$('li.next a, li.prev a').on('click', function(e) {
 	e.preventDefault();
 	$this = $(this);
 	$parentDiv = $this.parents('div:first');
